@@ -1,0 +1,11 @@
+Web Survey write-up -- Stephen Howard
+
+It has been a relatively painless experience transferring my console survey to the web! Once I was able to understand how require and provide work (how to make it three files), it went well. I also had to discover which primitives to write and how to write them. Also, I had to learn how to write HTML in racket.
+
+I did need to change my console survey some. I changed it to use a (Listof String) instead of Item. I then had to change my ask-question-1 and similar functions to use the listof string instead of the Item. These functions went from ((Listof Item) -> (Listof Item)) to ((Listof (Listof String)) -> (Listof (Listof String))). I had 
+
+In order to provide one of my main primitives read/num with the necessary parameters, I wrote a little ask-question function in my survey that takes one of my Question objects and calls read/num with the necessary parts. I didn't have to do anything else to my console survey! The total amount of code for this project is probably less than the last one.
+
+I then had to write my read/num function, this was very similar to the provided read/num function that kimball wrote. I used map and ol/li to display the options of the question. For display/web, I used map as well, and it was pretty easy. Also, I wrote a read/string primitive that is called by read/num if the user says that they would like to enter their own custom answer. read/string was very similar to read/num, simply shows a page where they can enter their answer and returns it as a string.
+
+I did take CS 260, and that is all the web programming that I have done. This seemed more painless than most of what I have done in web programming. At the same time, I don't remember anything about continuations or anything like that in the class. So that is an added difficulty here. However, I am grateful for web-server/insta that makes this relatively easy to do! Also, in web programming, the HTML files are obviously kept separate from the other code, such as JavaScript.

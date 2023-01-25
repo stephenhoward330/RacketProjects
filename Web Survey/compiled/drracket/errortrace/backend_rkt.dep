@@ -1,0 +1,1 @@
+("7.8" racket ("b0e31314fab43c9aea7f8c6e75468511a902db05" . "fc27130e56a2d7f2acd6c451c14fe671c0e24f60") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"web-server" #"http" #"request-structs.rkt") (collects #"web-server" #"http" #"xexpr.rkt") (collects #"web-server" #"servlet" #"web.rkt"))

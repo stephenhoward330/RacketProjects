@@ -1,0 +1,36 @@
+#lang plait
+
+(define-type Expr
+  (num [n : Number])
+  (id [x : Symbol])
+  (bool [b : Boolean])
+  (bin-num-op [op : (Number Number -> Number)] [lhs : Expr] [rhs : Expr])
+  (iszero [e : Expr])
+  (bif [test : Expr] [then : Expr] [else : Expr])
+  (with [bound-x : Symbol] [bound-body : Expr] [body : Expr])
+  (fun [arg-x : Symbol]
+       [arg-type : Type]
+       [body : Expr]
+       [body-type : Type])
+  (app [fun : Expr] [arg : Expr])
+  (nempty)
+  (ncons [first : Expr] [rest : Expr])
+  (nfirst [e : Expr])
+  (nrest [e : Expr])
+  (isnempty [e : Expr]))
+
+(define-type Type
+  (t-num)
+  (t-bool)
+  (t-nlist)
+  (t-fun [arg : Type] [result : Type]))
+
+(parse : (S-Exp -> Expr))
+(define (parse sexp)
+  ....)
+
+(type-of : (Expr -> Type))
+(define (type-of expr)
+  ....)
+
+
